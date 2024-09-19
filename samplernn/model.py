@@ -57,10 +57,18 @@ class SampleRNN(tf.keras.Model):
             raw_output = self(x, training=True)
             prediction = tf.reshape(raw_output, [-1, self.q_levels])
             target = tf.reshape(y, [-1])
-            loss = self.compiled_loss(
-                target,
-                prediction,
-                regularization_losses=self.losses)
+            x_data = tf.reshape(x, [-1])
+            loss = self.compute_loss(
+                x=x_data,
+                y=target,
+                y_pred=prediction,
+                sample_weight=None,
+                regularization_losses=self.losses              
+            )
+            #loss = self.compiled_loss(
+             #   target,
+             #   prediction,
+             #   regularization_losses=self.losses)
         grads = tape.gradient(loss, self.trainable_variables)
         grads, _ = tf.clip_by_global_norm(grads, 5.0)
         self.optimizer.apply_gradients(zip(grads, self.trainable_variables))
