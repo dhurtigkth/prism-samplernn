@@ -223,7 +223,7 @@ def main():
         config = json.load(config_file)
     # Create the model
     model = create_model(args.batch_size, config)
-
+    print("MODEL: ", model)
     seq_len = model.seq_len
     overlap = model.big_frame_size
     q_type = model.q_type
