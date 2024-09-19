@@ -14,7 +14,7 @@ class TrainingStepCallback(tf.keras.callbacks.Callback):
 
     def __init__(self, model, num_epochs, steps_per_epoch, steps_per_batch,
                  resume_from, verbose=True):
-        self.model = model
+        self._model = model
         self.num_epochs = num_epochs
         self.steps_per_epoch = steps_per_epoch
         self.steps_per_batch = steps_per_batch
