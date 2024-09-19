@@ -317,6 +317,7 @@ def main():
     init_data = np.random.randint(0, model.q_levels, (model.batch_size, overlap + model.seq_len, 1))
     model(init_data)
     try:
+        print("MODEL: ", model)
         model.fit(
             train_dataset,
             epochs=args.num_epochs,
