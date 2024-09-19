@@ -289,7 +289,7 @@ def main():
             max_to_keep = args.max_checkpoints,
             generate = args.generate,
             generation_args = generation_args,
-            filepath = '{0}/model.ckpt-{epoch}'.format(rundir),
+            filepath = '{0}/model.ckpt-{{epoch}}.weights.h5'.format(rundir),
             monitor = args.monitor,
             save_weights_only = True,
             save_best_only = args.checkpoint_policy.lower()=='best',
