@@ -22,6 +22,7 @@ class SampleRNN(tf.keras.Model):
         self.seq_len = seq_len
         self.emb_size = emb_size
         self.skip_conn = skip_conn
+        self.jit_compile = False
 
         self.big_frame_rnn = FrameRNN(
             rnn_type = self.rnn_type,
