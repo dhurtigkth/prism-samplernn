@@ -318,6 +318,8 @@ def main():
     model(init_data)
     try:
         print("MODEL: ", model)
+        print("DATASET: ", train_dataset)
+        print("EPOCHS: ", epochs)
         model.fit(
             train_dataset,
             epochs=args.num_epochs,
