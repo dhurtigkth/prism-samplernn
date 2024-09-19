@@ -149,6 +149,7 @@ optimizer_factory = {'adam': create_adam_optimizer,
 
 
 def create_model(batch_size, config):
+    print("Making model")
     seq_len = config.get('seq_len')
     frame_sizes = config.get('frame_sizes')
     q_type = config.get('q_type')
