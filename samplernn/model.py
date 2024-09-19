@@ -62,8 +62,7 @@ class SampleRNN(tf.keras.Model):
                 x=x_data,
                 y=target,
                 y_pred=prediction,
-                sample_weight=None,
-                regularization_losses=self.losses              
+                sample_weight=None           
             )
             #loss = self.compiled_loss(
              #   target,
